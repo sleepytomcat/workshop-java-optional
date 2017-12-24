@@ -1,2 +1,2 @@
-# workshop-java-optional
-Workshop materials for Java Optional workshop. Language: Russian.
+# java.util.Optional workshop
+Workshop materials for Java Optional workshop.
