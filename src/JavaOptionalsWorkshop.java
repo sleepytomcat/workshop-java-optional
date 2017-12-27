@@ -89,16 +89,14 @@ public class JavaOptionalsWorkshop {
 				.orElse(0);
 		println(noNumberAtAll);
 
-		println("[more complex example - what day was that in Moscow?]");
-		MyOptional<String> timestamp = MyOptional.of("1977-09-05T12:56:00Z");
-
-		String thatDayInMoscow = timestamp
-				.map(timestampstring -> ZonedDateTime.parse(timestampstring)) // string parsed into ZonedDateTime object
-				.map(zonedDateTimeUTC -> zonedDateTimeUTC.withZoneSameInstant(ZoneId.of("Europe/Moscow"))) // ZonedDateTime object with different timezone
-				.map(zonedDateTimeMsk -> zonedDateTimeMsk.getDayOfWeek()) // ZonedDateTime object -> DayOfWeek object
-				.map(dayOfWeek -> dayOfWeek.getDisplayName(TextStyle.FULL, Locale.forLanguageTag("RU"))) // DayOfWeek object -> day name string
-				.orElse("unknown"); // default value
-		println(thatDayInMoscow);
+		println("[map-chain]");
+		MyOptional<String> someNumber = MyOptional.of("1023");
+		String evenOrOdd = someNumber
+				.map(string -> Integer.decode(string))
+				.map(numeric -> numeric % 2 == 0)
+				.map(isEven -> isEven? "EVEN" : "ODD")
+				.orElse("NO VALUE");
+		println(evenOrOdd);
 	}
 
 	private static void println(Object valueToPrint) {
