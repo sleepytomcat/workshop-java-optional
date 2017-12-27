@@ -92,9 +92,9 @@ public class JavaOptionalsWorkshop {
 		println("[map-chain]");
 		MyOptional<String> someNumber = MyOptional.of("1023");
 		String evenOrOdd = someNumber
-				.map(string -> Integer.decode(string))
-				.map(numeric -> numeric % 2 == 0)
-				.map(isEven -> isEven? "EVEN" : "ODD")
+				.map(string -> Integer.decode(string)) // to Integer
+				.map(numeric -> numeric % 2 == 0) // to Boolean
+				.map(isEven -> isEven? "EVEN" : "ODD") // to  String, "EVEN" or "ODD"
 				.orElse("NO VALUE");
 		println(evenOrOdd);
 	}
