@@ -7,6 +7,7 @@ Workshop materials for Java Optional workshop.
 Brian Goetz, Java Language Architect at Oracle: "Our intention was to provide a limited mechanism for library method return types where there needed to be a clear way to represent "no result", and using null for such was overwhelmingly likely to cause errors." https://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type/26328555#26328555
 Optional does not implement Serializable - i.e. not the best option for class fields.
 0. Optional - use cases
+	* do not use Optional.get() uless you can prove it's not null
 	* return values: checking for null;
 	* return values: check if value is present;
 	* return values: use default values when null
