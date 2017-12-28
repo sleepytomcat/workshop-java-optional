@@ -1,9 +1,11 @@
 # workshop-java-optional
-Workshop materials for Java Optional workshop. 
-Video language: Russian.
+Workshop materials for Java Optional workshop.
 
+0. Overview: what's NPE, common cases for NPE, how Optional  
 0. Problem statement
 0. How java.util.Optional helps
+Brian Goetz, Java Language Architect at Oracle: "Our intention was to provide a limited mechanism for library method return types where there needed to be a clear way to represent "no result", and using null for such was overwhelmingly likely to cause errors." https://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type/26328555#26328555
+Optional does not implement Serializable - i.e. not the best option for class fields.
 0. Optional - use cases
 	* return values: checking for null;
 	* return values: check if value is present;
